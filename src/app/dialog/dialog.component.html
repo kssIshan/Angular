@@ -1,0 +1,112 @@
+<h1 mat-dialog-title>Add Items</h1>
+<div mat-dialog-content>
+    <form [formGroup]="itemsForm">
+        <mat-form-field appearance="legacy">
+            <mat-label>Item Code</mat-label>
+            <input formControlName="itemCode" matInput placeholder="Item Code">
+          </mat-form-field>
+    
+          <mat-form-field appearance="legacy">
+            <mat-label>Kitchen</mat-label>
+            <mat-select  formControlName="kitchen"   placeholder="Kichen">
+                <mat-option *ngFor="let item of kitchen" value={{item.value}}>{{item.value}}</mat-option>
+              </mat-select>
+          </mat-form-field>
+    
+          <mat-form-field appearance="legacy">
+            <mat-label>Item Name</mat-label>
+            <input formControlName="itemName" matInput placeholder="Item Name">
+          </mat-form-field>
+
+            <mat-form-field appearance="outline">
+            <mat-label>Category </mat-label>
+            <mat-select formControlName="category" (valueChange)="changeCountry($event)">
+              <mat-option *ngFor="let cat of categories"  [value]="cat">{{
+                cat.value
+              }}</mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+            <mat-label>SubCategory</mat-label>
+            <mat-select formControlName="subCategory">
+              <mat-option *ngFor="let sub of subCat" value={{sub}}> {{ sub}}</mat-option>
+            </mat-select>
+          </mat-form-field>
+    
+        
+    
+    
+
+          <mat-form-field appearance="legacy">
+            <mat-label>Item Size</mat-label>
+            <mat-select formControlName="itemSize">
+                <mat-option *ngFor="let item of itemSize" value={{item.value}}>{{item.value}}</mat-option>
+              </mat-select>
+          </mat-form-field>
+
+
+          <mat-form-field appearance="fill" floatLabel="always">
+            <mat-label>Cost Price</mat-label>
+            <input formControlName="costPrice" matInput type="number" class="example-right-align" placeholder="0">
+            <span matPrefix>$&nbsp;</span>
+            <span matSuffix>.00</span>
+          </mat-form-field>
+
+          <mat-form-field appearance="fill" floatLabel="always">
+            <mat-label>Take-away Price</mat-label>
+            <input formControlName="takeAwayPrice" matInput type="number" class="example-right-align" placeholder="0">
+            <span matPrefix>$&nbsp;</span>
+            <span matSuffix>.00</span>
+          </mat-form-field>
+
+          <mat-form-field appearance="fill" floatLabel="always">
+            <mat-label>Dine-In Price</mat-label>
+            <input formControlName="dineInPrice" matInput type="number" class="example-right-align" placeholder="0">
+            <span matPrefix>$&nbsp;</span>
+            <span matSuffix>.00</span>
+          </mat-form-field>
+
+          <mat-form-field appearance="fill" floatLabel="always">
+            <mat-label>Web Price</mat-label>
+            <input formControlName="webPrice" matInput type="number" class="example-right-align" placeholder="0">
+            <span matPrefix>$&nbsp;</span>
+            <span matSuffix>.00</span>
+          </mat-form-field>
+
+          
+          <mat-form-field appearance="fill" floatLabel="always">
+            <mat-label>Service Charge</mat-label>
+          <input  matInput type="textbox" formControlName="serviceCharge" placeholder="%" appPercentageDirective>
+        </mat-form-field> 
+
+
+        <mat-form-field class="example-chip-list" appearance="fill">
+          <mat-label>Devices</mat-label>
+          <mat-chip-list #chipList aria-label="device selection">
+            <mat-chip *ngFor="let device of device" (removed)="remove(device)">
+              {{device.name}}
+              <button matChipRemove>
+                <mat-icon>cancel</mat-icon>
+              </button>
+            </mat-chip>
+            <input  placeholder="New Devices..."
+                   [matChipInputFor]="chipList"
+                   [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+                   [matChipInputAddOnBlur]="addOnBlur"
+                   (matChipInputTokenEnd)="add($event)">
+          </mat-chip-list>
+        </mat-form-field>
+        
+        
+        
+
+      
+    </form>
+</div>
+
+
+<div mat-dialog-action [align]="'end'">
+    <button mat-raised-button color="warn" mat-dialog-close>Close</button>
+    <button style="margin-left: 8px;" mat-raised-button color="primary" (click)="addItems()">Save</button>
+</div>

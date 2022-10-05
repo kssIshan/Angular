@@ -1,0 +1,107 @@
+{
+  "ItemList": [
+    {
+      "itemCode": "002",
+      "kitchen": "Beverages",
+      "itemName": "sameera",
+      "category": {
+        "id": 2,
+        "value": "Indian"
+      },
+      "subCategory": "Masala Dosai",
+      "itemSize": "Regular",
+      "costPrice": 1,
+      "takeAwayPrice": 1,
+      "dineInPrice": 1,
+      "webPrice": 10,
+      "serviceCharge": "10",
+      "devices": [
+        {
+          "name": "Lemon"
+        },
+        {
+          "name": "Lime"
+        },
+        {
+          "name": "Apple"
+        },
+        {
+          "name": "ssds"
+        }
+      ],
+      "id": 9
+    },
+    {
+      "itemCode": "003",
+      "kitchen": "Beverages",
+      "itemName": "ishan",
+      "category": {
+        "id": 2,
+        "value": "Indian"
+      },
+      "subCategory": "Masala Dosai",
+      "itemSize": "Regular",
+      "costPrice": 10,
+      "takeAwayPrice": 10,
+      "dineInPrice": 10,
+      "webPrice": 10,
+      "serviceCharge": "30",
+      "devices": [
+        {
+          "name": "Laptop"
+        },
+        {
+          "name": "Mobile"
+        },
+        {
+          "name": "Tablet"
+        },
+        {
+          "name": "pc"
+        }
+      ],
+      "id": 10
+    },
+    {
+      "itemCode": "004",
+      "kitchen": "Beverages",
+      "itemName": "sameera",
+      "category": {
+        "id": 2,
+        "value": "Indian"
+      },
+      "subCategory": "Naan Rotti",
+      "itemSize": "Regular",
+      "costPrice": 10,
+      "takeAwayPrice": 10,
+      "dineInPrice": 10,
+      "webPrice": 10,
+      "serviceCharge": "50",
+      "devices": [
+        {
+          "name": "Laptop"
+        },
+        {
+          "name": "Mobile"
+        },
+        {
+          "name": "Tablet"
+        },
+        {
+          "name": "pen"
+        }
+      ],
+      "id": 11
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}
